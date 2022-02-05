@@ -57,6 +57,8 @@
             </div>
         </main>
 
+        <div id="correction"></div>
+
         <div id="result">
 
         </div>
@@ -74,6 +76,7 @@
     document.querySelector('#answer').focus()
 
     document.querySelector('#submit').addEventListener("click", function(){
+        document.querySelector('#correction').innerHTML = total
         if( document.querySelector('#answer').value == total){
             image.src  = 'assets/correct.gif'
         }else{
