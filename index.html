@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <style>
+            body, input{
+                font-family: Josefin Sans;
+                font-size: 100pt;
+            }
+
+            main, div.main{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #answer{
+                height: 133px;
+                width: 120px;
+                border: 1px solid grey;
+            }
+
+            #answer:focus {
+                border: 1px solid pink;
+                outline: none;
+            }
+
+            #submit{
+                height: 133px;
+            }
+
+            div#result{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div class="main">
+                <span id="number1"></span>
+                <span>+</span>
+                <span id="number2"></span>
+                <span>=</span>
+                <span><input id="answer" type="text" /></span>
+                <span><img id="submit" src="assets/check.png" /></span>
+            </div>
+        </main>
+
+        <div id="result">
+
+        </div>
+    </body>
+</html>
+
+<script>
+    const number1 = Math.floor(Math.random() * 11)
+    const number2 = Math.floor(Math.random() * 11)
+    const total = number1 + number2
+    const image = document.createElement('img')
+
+    document.querySelector('#number1').innerHTML = number1
+    document.querySelector('#number2').innerHTML = number2
+    document.querySelector('#answer').focus()
+
+    document.querySelector('#submit').addEventListener("click", function(){
+        if( document.querySelector('#answer').value == total){
+            image.src  = 'assets/correct.gif'
+        }else{
+            image.src  = 'assets/wrong.gif'
+        }
+        document.querySelector('#result').appendChild(image)
+
+        window.setTimeout(
+        function(){
+            location.reload(true)
+        },
+        5000
+        );
+    });
+</script>
