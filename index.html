@@ -17,7 +17,7 @@
             }
 
             main{
-                height: 70%;
+                height: 50%;
             }
 
             #answer{
@@ -36,7 +36,7 @@
             }
 
             div#result{
-                height: 19%;
+                height: 24%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -44,16 +44,37 @@
             }
             
             div#correction{
-                height: 9%;
+                height: 24%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-top: 1%;
             }
+
+            header{
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            div#avatar{
+                width: 80px;
+                border-radius: 80px;
+                background-color: pink;
+            }
+
+            div#avatar img{
+                width: 80px;
+            }
         </style>
     </head>
 
     <body>
+        <header>
+            <div id="avatar">
+                <img src="assets/users/5c9abd46-86a4-11ec-a8a3-0242ac120002.png" />
+            </div> 
+        </header>
+
         <main>
             <div class="main">
                 <span id="number1"></span>
@@ -65,10 +86,9 @@
             </div>
         </main>
 
-        <div id="correction"></div>
-
-        <div id="result">
-
+        <div>
+            <div id="correction"></div>
+            <div id="result"></div>
         </div>
     </body>
 </html>
